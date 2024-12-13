@@ -1,1 +1,29 @@
-Postman
+Test a Simple GET Request
+
+Open the created collection.
+Click Add a Request and name it (Homepage).
+Set the request type to GET.
+Enter a website URL in the Request URL field (https://example.com).
+Click Save.
+
+Run the GET Request
+Click Send to execute the request.
+Observe the response in the Body and Status tabs.
+Verify the status code (200 OK)
+
+
+Click Add a Request and name it (Test).
+Set the request type to GET.
+Enter a website URL in the Request URL field (https://www.amazon.in/).
+Click Save.
+
+In Script Add Code
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+pm.test("Content-Type is text/html", function () {
+    pm.response.to.have.header("Content-Type", "text/html");
+});
+
+Click Send to execute the request.
+Verify the status code (200 OK)
